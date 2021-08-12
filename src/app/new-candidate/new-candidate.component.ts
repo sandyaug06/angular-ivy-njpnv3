@@ -21,7 +21,7 @@ export class NewCandidateComponent implements OnInit {
   }
 
   public addCondidate() {
-    this.id = this.id + 1;
+    this.id = this.candidateService.getCandidates().length + 1;
     this.candidateService.addCandidate({
       id: this.id,
       first_name: this.first_name,
