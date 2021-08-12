@@ -8,11 +8,11 @@ import { CandidateService } from '../candidate-service.service';
 })
 export class NewCandidateComponent implements OnInit {
   public id: number = 10;
-  public first_name: string;
-  public last_name: string;
-  public email: string;
-  public male: string;
-  public female: string;
+  public first_name: string = '';
+  public last_name: string = '';
+  public email: string = '';
+  public male: string = '';
+  public female: string = '';
 
   constructor(private candidateService: CandidateService) {}
 
