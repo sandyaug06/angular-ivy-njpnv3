@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Candidate } from './candidate';
 @Injectable()
 export class CandidateService {
@@ -32,6 +32,8 @@ export class CandidateService {
       gender: 'Male'
     }
   ];
+
+  candidateAdd = new EventEmitter<Candidate>();
 
   constructor() {}
 
