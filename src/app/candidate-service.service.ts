@@ -33,11 +33,13 @@ export class CandidateService {
     }
   ];
 
-  candidateAdd = new EventEmitter<Candidate>();
-
   constructor() {}
 
   getCandidates() {
     return this.candidates;
+  }
+
+  addCandidate(candidate: Candidate) {
+    this.candidates.push(candidate);
   }
 }

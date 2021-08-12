@@ -7,25 +7,27 @@ import { CandidateService } from '../candidate-service.service';
   styleUrls: ['./new-candidate.component.css']
 })
 export class NewCandidateComponent implements OnInit {
-  id: number = 10;
-  first_name: string;
-  last_name: string;
-  email: string;
-  male: string;
-  female: string;
+  public id: number = 10;
+  public first_name: string;
+  public last_name: string;
+  public email: string;
+  public male: string;
+  public female: string;
 
   constructor(private candidateService: CandidateService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('called');
+  }
 
-  addCandidate() {
-    console.log(this.male + ' ' + this.female);
-    this.candidateService.candidateAdd.emit({
-      id: this.id++,
+  public addCondidate() {
+    this.id = this.id + 1;
+    this.candidateService.addCandidate({
+      id: this.id,
       first_name: this.first_name,
       last_name: this.last_name,
       email: this.email,
-      gender: ''
+      gender: 'Male'
     });
   }
 }
