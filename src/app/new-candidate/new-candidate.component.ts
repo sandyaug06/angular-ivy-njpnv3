@@ -21,13 +21,15 @@ export class NewCandidateComponent implements OnInit {
   }
 
   public addCondidate() {
+    console.log(this.male + ' , ' + this.female);
     this.id = this.candidateService.getCandidates().length + 1;
+
     this.candidateService.addCandidate({
       id: this.id,
       first_name: this.first_name,
       last_name: this.last_name,
       email: this.email,
-      gender: 'Male'
+      gender: this.male === 'true' ? 'Male' : 'Female'
     });
   }
 }
